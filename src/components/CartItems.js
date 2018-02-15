@@ -3,6 +3,11 @@ import Item from './Item';
 
 const CartItems = ({items}) => {
   let listOfItems = items.map(item => <Item key={item.id} item={item}/>)
+
+  let itemsTotal = items.reduce((acc, currVal) => {
+    return acc + (currVal.quantity * (currVal.product.priceInCents / 100))
+  }, 0)
+
   return(
   <div className="container">
     <h1>Items</h1>
@@ -14,6 +19,7 @@ const CartItems = ({items}) => {
       </div>
       {listOfItems}
     </div>
+    <p>Total: ${itemsTotal}</p>
   </div>
   )
 }

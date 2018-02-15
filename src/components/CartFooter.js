@@ -13,7 +13,7 @@ const CartFooter = (props) => {
       </div>
       <div className="footer-copyright">
         <div className="container">
-          {props.copyright} Never
+          &copy; Nick D'Errico {props.copyright}
         </div>
       </div>
     </footer>
